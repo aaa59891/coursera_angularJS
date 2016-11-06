@@ -9,7 +9,9 @@
   <body>
     <h1>First angularJS app!</h1>
     <div ng-controller="myFirstController">
-
+      <input type="number" ng-model="firstNum">
+      <input type="number" ng-model="secondNum">
+      <label>{{firstNum + secondNum}}</label>
     </div>
   </body>
 </html>
