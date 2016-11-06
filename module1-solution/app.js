@@ -26,7 +26,7 @@
   function calculateItems(items) {
     var number = 0;
     for(var item of items){
-      if(!(typeof item == 'undefined' || item == '')){
+      if(!(typeof item == 'undefined' || item.trim() == '')){
         number++;
       }
     }
