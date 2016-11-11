@@ -54,11 +54,16 @@
         name:name,
         quantity:quantity
       };
-      buyItems.push(item);
+      if(!checkSameItem(buyItems, item)){
+        buyItems.push(item);
+      }
     }
 
     this.addToBought = function (index) {
-      boughtItems.push(buyItems[index]);
+      var needToPush = true;
+      if(!checkSameItem(boughtItems, buyItems[index])){
+        boughtItems.push(buyItems[index]);
+      }
       buyItems.splice(index,1);
     }
 
@@ -68,5 +73,15 @@
     this.getBoughtItems = function () {
       return boughtItems;
     }
+  }
+
+  function checkSameItem(items, checkItem) {
+    for(var item of items){
+      if(item.name == checkItem.name){
+        item.quantity = parseInt(item.quantity) + parseInt(checkItem.quantity);
+        return true;
+      }
+    }
+    return false;
   }
 })();
