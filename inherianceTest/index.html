@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="inheritanceTest">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Inheritance Test</title>
+  </head>
+  <body>
+    <div ng-controller="ParantController1 as parent">
+      <div ng-controller="ChildController1 as child">
+        {{value}}<br>
+        {{parent.value}}<br>
+        {{child.value}}
+      </div>
+    </div>
+  </body>
+</html>
